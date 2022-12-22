@@ -1,0 +1,23 @@
+import numpy as np #panggil library
+a = 0
+b = 1.0
+fa = a**3-2*a+1
+fb = b**3-2*b+1
+
+#kondisi jika tidak memiliki akar
+if fa*fb>0:
+    print ('persamaan tidak memiliki akar')
+    exit
+    
+for i in range (1,101):
+    x = (a+b)/2
+    fx = x**3-2*x+1
+    fa = a**3-2*a+1
+    if abs(fa) < 1.0e-6:
+        break
+    elif fa*fx < 0:
+        b=x
+    else:
+        a=x
+        
+print ('Akar: %.3f' %a)
